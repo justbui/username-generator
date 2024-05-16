@@ -76,3 +76,30 @@ To run the application locally, follow these steps:
 - Open your web browser and navigate to `http://localhost:3000` to access the application.
 - Fill out the form with your personal information (first name, last name, date of birth, favorite fruit) and submit the form to generate your username.
 - The generated username will be displayed on the screen.
+
+## Docker Integration
+
+The Username Generator application is Docker-ready, allowing for easy containerization and deployment using Docker.
+
+### Dockerfile for Frontend
+
+The `frontend` directory contains a Dockerfile that builds the frontend React application into a production-ready image. This Dockerfile uses a multi-stage build process to first build the application and then serve it using an Nginx web server.
+
+### Dockerfile for Backend
+
+The `backend` directory contains a Dockerfile that packages the backend Node.js application into a Docker image. This Dockerfile installs dependencies, copies application files, and exposes the application port.
+
+### Docker Compose
+
+The project includes a `docker-compose.yml` file, which defines services for both the frontend and backend applications. Docker Compose allows for easy orchestration of multi-container Docker applications and simplifies the process of building, running, and connecting containers.
+
+### Building and Running Containers
+
+To build and run the Docker containers for the Username Generator application, follow these steps:
+
+1. Ensure Docker Desktop is installed and running on your machine.
+2. Navigate to the project directory containing the `docker-compose.yml` file.
+3. Run the following command to build and start the containers:
+
+   ```bash
+   docker-compose up --build
